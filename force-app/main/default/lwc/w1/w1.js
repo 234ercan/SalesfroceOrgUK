@@ -6,6 +6,8 @@ export default class W1 extends LightningElement {
 name='ercan';
 surname='yilmaz';
 fullName;
+showError=false;
+
 
 handleName(event){
 this.name=event.target.value;

@@ -8,7 +8,7 @@
         <lightning-input  type="search" class="slds-m-bottom_small" label="Search Account Name" onchange={searchAccountAction} value={accountName}></lightning-input>
         </p>
         <div class="slds-p-around--medium">
-           <table border="1" bordercolor="#ddd" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" class="lwsTablePad">          
+           <table border="1" cellpadding="5" cellspacing="0" style="border-collapse:collapse;" class="lwsTablePad">          
                <tr>
                    <th>Name</th>
                    <th>Phone</th>
@@ -16,7 +16,7 @@
                    <th>Industry</th>
                    <th>Description</th>
                </tr>
-               <template for:each={accountList} for:item="accObj" for:index="index">                
+                <template for:each={accountList} for:item="accObj" for:index="index">                
                    <tr class="slds-hint-parent" key={accObj.Id}>
                       <td>{accObj.Name}</td>
                       <td>{accObj.Phone}</td>
@@ -24,7 +24,7 @@
                       <td>{accObj.Industry}</td>
                       <td>{accObj.Description}</td>
                    </tr>            
-               </template>          
+                </template>          
            </table> 
         </div>  
     </lightning-card>
