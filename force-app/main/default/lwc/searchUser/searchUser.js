@@ -1,18 +1,19 @@
-import { LightningElement, wire, api } from 'lwc';
+import { LightningElement, wire, api, track } from 'lwc';
 import getUserInfoByEmail from '@salesforce/apex/ContactUserController.getUserInfoByEmail';
 
 export default class ContactUserInfo extends LightningElement {
-    @api contactId;
-    userFound = false;
-    contactHasNoEmail = false;
-    userNotFound = false;
-    userInfo = {};
+    @api recordId;
+    @api userFound = false;
+    @api contactHasNoEmail = false;
+    @api userNotFound = false;
+    @track userInfo ;
 
-    @wire(getUserInfoByEmail, { contactId: '$contactId' })
+    @wire(getUserInfoByEmail, { contactId: '$recordId' })
     handleUserResponse({ error, data }) {
         if (data) {
             this.userFound = true;
             this.userInfo = data;
+            console.log("user info " +data);
         } else if (error) {
             console.error(error);
         } else {

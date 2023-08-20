@@ -1,12 +1,27 @@
 <template>
-   <div if:true={userFound}>
-       <p>Username: {userInfo.username}</p>
-       <p>First Name: {userInfo.firstName}</p>
-       <p>Last Name: {userInfo.lastName}</p>
-       <p>Email: {userInfo.email}</p>
-   </div>
-   <div if:false={userFound}>
-       <p if:true={contactHasNoEmail}>The Contact does not have an email address.</p>
-       <p if:true={userNotFound}>User not found based on Contact's email.</p>
-   </div>
+   <lightning-card icon-name="standard:user" variant="base">
+     <div slot="title">
+         user search
+     </div>
+     <div slot="actions">
+   
+     </div>
+     <div slot="footer">
+   
+     </div>
+      <div>
+         <div if:true={userFound}>
+            <p>Username: {userInfo.username}</p>
+            <p>First Name: {userInfo.firstName}</p>
+            <p>Last Name: {userInfo.lastName}</p>
+            <p>Email: {userInfo.email}</p>
+         </div>
+         <div if:false={userFound}>
+            <p if:true={contactHasNoEmail}>The Contact does not have an email address.</p>
+            <p if:true={userNotFound}>User not found based on Contact's email.</p>
+         </div>
+       
+     </div>
+   </lightning-card>
+   
 </template>

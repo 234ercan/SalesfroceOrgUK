@@ -10,10 +10,10 @@ public with sharing class ContactUserController {
     @AuraEnabled(cacheable=true)
     public static UserWrapper getUserInfoByEmail(String contactId) {
         Contact contact = [SELECT Id, Email FROM Contact WHERE Id = :contactId AND Email != null LIMIT 1];
-        
+        System.debug('contact: '+contact);
         if (contact != null) {
             User user = [SELECT Id, Username, FirstName, LastName, Email FROM User WHERE Email = :contact.Email LIMIT 1];
-            
+            System.debug('user: '+user);
             if (user != null) {
                 UserWrapper wrapper = new UserWrapper();
                 wrapper.username = user.Username;
