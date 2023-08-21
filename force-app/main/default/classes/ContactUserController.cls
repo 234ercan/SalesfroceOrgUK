@@ -17,9 +17,11 @@ public with sharing class ContactUserController {
             if (user != null) {
                 UserWrapper wrapper = new UserWrapper();
                 wrapper.username = user.Username;
+                System.debug('user name after return: '+wrapper.username);
                 wrapper.firstName = user.FirstName;
                 wrapper.lastName = user.LastName;
                 wrapper.email = user.Email;
+                System.debug('email after return: '+wrapper.email);
                 return wrapper;
             }
         }
