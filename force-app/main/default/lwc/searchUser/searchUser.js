@@ -18,9 +18,9 @@ export default class ContactUserInfo extends LightningElement {
             console.error(error);
         } else {
             // User not found or contact doesn't have an email
-            const contactWithoutEmail = this.recordId && !this.userInfo.email;
-            this.contactHasNoEmail = contactWithoutEmail;
-            this.userNotFound = !contactWithoutEmail;
+           
+            this.contactHasNoEmail = true;
+            this.userNotFound = true;
         }
     }
 }

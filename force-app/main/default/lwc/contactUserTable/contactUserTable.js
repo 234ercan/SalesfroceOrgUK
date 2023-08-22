@@ -14,9 +14,9 @@ export default class ContactUserTable extends LightningElement {
       } else if (error) {
           console.error(error);
       } else{
-            if(!recordId==null){
+            if(!this.recordId==null){
                this.showContactEmailError=true;
-            }else if(!data[0].email==null){
+            }else {
                this.showUserError=true;
             }
       }
